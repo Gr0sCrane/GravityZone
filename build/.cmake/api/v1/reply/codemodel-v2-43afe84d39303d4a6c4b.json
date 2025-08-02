@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "GravityZone::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-GravityZone-Debug-39cb6aaf5eb5d96ab81b.json",
-					"name" : "GravityZone",
+					"id" : "gravityZone::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-gravityZone-Debug-6ad594a701decf63a680.json",
+					"name" : "gravityZone",
 					"projectIndex" : 0
 				}
 			]

@@ -7,13 +7,13 @@ set(CMAKE_CXX_STANDARD 20)
 include_directories("C:/raylib/w64devkit/x86_64-w64-mingw32/include/")
 
 # Fichier source
-add_executable(GravityZone src/main.cpp)
+add_executable(gravityZone src/main.cpp src/object.cpp)
 
 # Dossier des libs raylib
 link_directories("C:/raylib/w64devkit/x86_64-w64-mingw32/lib/")
 
 # Linker raylib + dépendances
-target_link_libraries(GravityZone
+target_link_libraries(gravityZone
     "C:/raylib/w64devkit/x86_64-w64-mingw32/lib/libraylib.a"
     opengl32
     gdi32

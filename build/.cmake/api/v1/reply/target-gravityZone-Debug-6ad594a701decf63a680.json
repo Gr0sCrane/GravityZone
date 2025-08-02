@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "GravityZone.exe"
+			"path" : "gravityZone.exe"
 		},
 		{
-			"path" : "GravityZone.pdb"
+			"path" : "gravityZone.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -73,11 +73,12 @@
 			},
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
-	"id" : "GravityZone::@6890427a1f51a3e7e1df",
+	"id" : "gravityZone::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -117,8 +118,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "GravityZone",
-	"nameOnDisk" : "GravityZone.exe",
+	"name" : "gravityZone",
+	"nameOnDisk" : "gravityZone.exe",
 	"paths" : 
 	{
 		"build" : ".",
@@ -130,7 +131,8 @@
 			"name" : "Source Files",
 			"sourceIndexes" : 
 			[
-				0
+				0,
+				1
 			]
 		}
 	],
@@ -140,6 +142,12 @@
 			"backtrace" : 1,
 			"compileGroupIndex" : 0,
 			"path" : "src/main.cpp",
+			"sourceGroupIndex" : 0
+		},
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "src/object.cpp",
 			"sourceGroupIndex" : 0
 		}
 	],
