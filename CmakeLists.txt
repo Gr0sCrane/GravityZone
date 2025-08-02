@@ -1,0 +1,22 @@
+cmake_minimum_required(VERSION 3.10)
+project(GravityZone)
+
+set(CMAKE_CXX_STANDARD 20)
+
+# Dossier des headers de raylib
+include_directories("C:/raylib/w64devkit/x86_64-w64-mingw32/include/")
+
+# Fichier source
+add_executable(GravityZone src/main.cpp)
+
+# Dossier des libs raylib
+link_directories("C:/raylib/w64devkit/x86_64-w64-mingw32/lib/")
+
+# Linker raylib + dépendances
+target_link_libraries(GravityZone
+    "C:/raylib/w64devkit/x86_64-w64-mingw32/lib/libraylib.a"
+    opengl32
+    gdi32
+    winmm
+)
+
