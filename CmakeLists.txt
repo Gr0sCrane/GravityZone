@@ -3,15 +3,12 @@ project(GravityZone)
 
 set(CMAKE_CXX_STANDARD 20)
 
-# Chemin vers Raylib
+
 set(RAYLIB_PATH "C:/Libraries/raylib")
 
-# Ajouter les includes et libs
 include_directories(${RAYLIB_PATH}/include)
 link_directories(${RAYLIB_PATH}/lib)
 
-# Executable
 add_executable(GravityZone src/main.cpp src/body.cpp)
 
-# Lier raylib + dépendances Windows
 target_link_libraries(GravityZone raylib winmm gdi32 opengl32)
