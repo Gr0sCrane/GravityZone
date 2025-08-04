@@ -1,7 +1,8 @@
 #include <iostream>
 #include <raylib.h>
-#include "body.h"
 #include "utils.h"
+#include "constant.h"
+
 
 int main() {
 
@@ -9,17 +10,25 @@ int main() {
 
     SetTargetFPS(60);
 
-    Position pos = {5,5};
-    
-    std::cout << G << "\n";
+    Position pos = {10,5};
+    Position pos2 = {20,5};
 
-    Body planet = Body(pos,50,50);
+    Body planet = Body(pos,50,1);
+    Body planet2 = Body(pos2,50,2);
 
     while (!WindowShouldClose()) {
         BeginDrawing();
         ClearBackground(BLACK);
 
-        planet.draw();
+        planet.draw(WHITE);
+        planet2.draw(BLUE);
+
+        if (collisionCheck(planet,planet2)){
+            std::cout<< "Yes" << "\n";
+        } else {
+            std::cout << "No" << "\n";
+        }
+        
 
         EndDrawing();
     }

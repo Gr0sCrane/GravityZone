@@ -2,6 +2,7 @@
 #include <iostream>
 #include <raylib.h>
 #include "position.h"
+#include "constant.h"
 
 struct Body {
 
@@ -14,7 +15,7 @@ struct Body {
     Body(Position pos,double mass,float radius);
     ~Body() = default;
 
-    void draw() const;
+    void draw(Color color) const;
     void applyGravity() const;
 
 };

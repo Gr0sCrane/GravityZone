@@ -9,6 +9,6 @@ set(RAYLIB_PATH "C:/Libraries/raylib")
 include_directories(${RAYLIB_PATH}/include)
 link_directories(${RAYLIB_PATH}/lib)
 
-add_executable(GravityZone src/main.cpp src/body.cpp)
+add_executable(GravityZone src/main.cpp src/body.cpp src/constant.cpp)
 
 target_link_libraries(GravityZone raylib winmm gdi32 opengl32)
