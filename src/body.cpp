@@ -12,4 +12,21 @@ void Body::draw(Color color) const {
     DrawCircle(screenX, screenY, screenRadius, color);
 }
 
-void Body::applyGravity() const {}
+void Body::applyGravity(std::vector<Body> bodies) const 
+{
+    for (auto& b : bodies){
+        //code TODO
+        std::cout<<"Test"<<"\n";
+    }
+}
+
+void appgravity(Body& b, int height){
+
+    int posY_b = b.pos.y + b.radius; // Position y of the body
+
+    if (posY_b >= height/scale) {
+        b.pos.y--;
+    } else {
+        b.pos.y++;
+    }
+}

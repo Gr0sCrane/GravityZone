@@ -2,11 +2,18 @@
 #include <raylib.h>
 #include "utils.h"
 #include "constant.h"
+#include <memory>
+#include <vector>
+
+std::vector<Body> bodies;
 
 
 int main() {
 
-    InitWindow(1280, 720, "GravityZone-alphaBuild");
+    const int HEIGHT = 720;
+    const int LENGTH = 1280;
+
+    InitWindow(LENGTH, HEIGHT, "GravityZone-alphaBuild");
 
     SetTargetFPS(60);
 
@@ -14,7 +21,7 @@ int main() {
     Position pos2 = {20,5};
 
     Body planet = Body(pos,50,1);
-    Body planet2 = Body(pos2,50,2);
+    Body planet2 = Body(pos2,50,1);
 
     while (!WindowShouldClose()) {
         BeginDrawing();
@@ -23,13 +30,8 @@ int main() {
         planet.draw(WHITE);
         planet2.draw(BLUE);
 
-        if (collisionCheck(planet,planet2)){
-            std::cout<< "Yes" << "\n";
-        } else {
-            std::cout << "No" << "\n";
-        }
+        appgravity(planet,HEIGHT);
         
-
         EndDrawing();
     }
 

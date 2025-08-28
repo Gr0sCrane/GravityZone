@@ -3,6 +3,7 @@
 #include <raylib.h>
 #include "position.h"
 #include "constant.h"
+#include <vector>
 
 struct Body {
 
@@ -16,6 +17,8 @@ struct Body {
     ~Body() = default;
 
     void draw(Color color) const;
-    void applyGravity() const;
+    void applyGravity(std::vector<Body> bodies) const;
 
 };
+
+void appgravity(Body& b, int height);
