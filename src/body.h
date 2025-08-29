@@ -33,4 +33,8 @@ struct Body {
 
 };
 
-void appgravity(Body& b);
+void appgravity(Body& b,Body& b2);
+
+double calculateDistance(Body b1, Body b2);
+
+bool collisionCheck(Body& b1,Body& b2);

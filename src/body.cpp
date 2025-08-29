@@ -47,9 +47,9 @@ void Body::check_touched_ledge(){
 
 }
 
-void appgravity(Body& b){
+void appgravity(Body& b,Body& b2){
 
-    //b.speed.y += 0.5;
+    b.speed.y += 0.01; // gravity -> a modifier par la constante
 
     b.pos.y += b.speed.y;
     b.pos.x += b.speed.x;
@@ -82,4 +82,19 @@ void appgravity(Body& b){
         b.speed.x *= -0.9;
         b.speed.y *= 0.9;
     }
+}
+
+double calculateDistance(Body b1, Body b2){
+
+    Position b1Pos = b1.pos;
+    Position b2Pos = b2.pos;
+
+    return sqrt((pow(b2Pos.x - b1Pos.x,2) + pow(b2Pos.y - b1Pos.y,2)));
+}
+
+bool collisionCheck(Body& b1,Body& b2){
+
+    double distance = calculateDistance(b1,b2);
+    float radiusSum = b1.radius + b2.radius;
+    return distance <= radiusSum;
 }
