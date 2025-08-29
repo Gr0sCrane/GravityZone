@@ -19,8 +19,10 @@ struct Body {
     Position pos;
     bool has_touched_top_ledge = false;
     bool has_touched_low_ledge = false;
+    bool has_touched_left_ledge = false;
+    bool has_touched_right_ledge = false;
     std::vector<Position> oldPositions;
-    const size_t MAXOLDPOS = 550;
+    const size_t MAXOLDPOS = 1000;
 
     Body(Position pos,double mass,float radius,Velocity speed);
     ~Body() = default;

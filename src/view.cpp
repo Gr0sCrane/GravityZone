@@ -1,13 +1,13 @@
 #include <iostream>
 #include "view.h"
 
-void View::DebugInfo(Body& b,std::vector<Body> bodies){
+void View::DebugInfo(Body& b,Body& b2){
 
     auto speedX = b.speed.x;
     auto speedY = b.speed.y;
     auto posX = b.pos.x;
     auto posY = b.pos.y;
-    bool isCollising = collisionCheck(b,bodies[1]);
+    bool isCollising = collisionCheck(b,b2);
 
     std::string sX = std::to_string(speedX);
     std::string sY = std::to_string(speedY);
@@ -15,9 +15,27 @@ void View::DebugInfo(Body& b,std::vector<Body> bodies){
     std::string pY = std::to_string(posY);
     std::string check = std::to_string(isCollising);
 
-    DrawText(("X coord speed: " + sX).c_str(), 10, 10, 10, BLUE);
-    DrawText(("Y coord speed: " + sY).c_str(), 10, 40, 10, BLUE);
-    DrawText(("X position: " + pX).c_str(), 10, 70, 10, BLUE);
-    DrawText(("Y position: " + pY).c_str(), 10, 100, 10, BLUE);
-    DrawText(("Collision: " + check).c_str(), 10, 130, 10, BLUE);
+    auto speedX_ = b2.speed.x;
+    auto speedY_ = b2.speed.y;
+    auto posX_ = b2.pos.x;
+    auto posY_ = b2.pos.y;
+    bool isCollising_ = collisionCheck(b2,b);
+
+    std::string sX_ = std::to_string(speedX_);
+    std::string sY_ = std::to_string(speedY_);
+    std::string pX_ = std::to_string(posX_);
+    std::string pY_ = std::to_string(posY_);
+    std::string check_ = std::to_string(isCollising_);
+
+    DrawText(("X coord speed: " + sX).c_str(), 10, 10, 13, WHITE);
+    DrawText(("Y coord speed: " + sY).c_str(), 10, 40, 13, WHITE);
+    DrawText(("X position: " + pX).c_str(), 10, 70, 13,WHITE);
+    DrawText(("Y position: " + pY).c_str(), 10, 100, 13, WHITE);
+    DrawText(("Collision: " + check).c_str(), 10, 130, 13, WHITE);
+
+    DrawText(("X coord speed: " + sX_).c_str(), 10, 160, 13, BLUE);
+    DrawText(("Y coord speed: " + sY_).c_str(), 10, 190, 13, BLUE);
+    DrawText(("X position: " + pX_).c_str(), 10, 210, 13, BLUE);
+    DrawText(("Y position: " + pY_).c_str(), 10, 240, 13, BLUE);
+    DrawText(("Collision: " + check_).c_str(), 10, 270, 13, BLUE);
 }

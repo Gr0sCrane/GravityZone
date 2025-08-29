@@ -6,5 +6,5 @@
 
 struct View {
 
-    void DebugInfo(Body& b,std::vector<Body> bodies);
+    void DebugInfo(Body& b,Body& b2);
 };
