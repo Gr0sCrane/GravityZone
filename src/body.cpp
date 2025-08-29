@@ -2,8 +2,8 @@
 #include "body.h"
 
 
-Body::Body(Position pos, double mass, float radius) : 
-pos(pos),mass(mass),radius(radius) {}
+Body::Body(Position pos, double mass, float radius,Velocity speed) : 
+pos(pos),mass(mass),radius(radius),speed(speed) {}
 
 bool checkSizeOldPos(std::vector<Position> oldPos,size_t max){
 

@@ -6,7 +6,7 @@
 #include <vector>
 
 struct Velocity {
-    double x = 0;
+    double x;
     double y;
 };
 
@@ -20,9 +20,9 @@ struct Body {
     bool has_touched_top_ledge = false;
     bool has_touched_low_ledge = false;
     std::vector<Position> oldPositions;
-    const size_t MAXOLDPOS = 300;
+    const size_t MAXOLDPOS = 550;
 
-    Body(Position pos,double mass,float radius);
+    Body(Position pos,double mass,float radius,Velocity speed);
     ~Body() = default;
 
     void draw(Color color) const;
