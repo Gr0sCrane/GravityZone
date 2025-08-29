@@ -5,6 +5,15 @@
 Body::Body(Position pos, double mass, float radius) : 
 pos(pos),mass(mass),radius(radius) {}
 
+bool checkSizeOldPos(std::vector<Position> oldPos,size_t max){
+
+    if(oldPos.size() >= max){
+        oldPos.clear();
+        return false;
+    }
+    return true;
+}
+
 void Body::draw(Color color) const {
     int screenX = static_cast<int>(pos.x * scale);
     int screenY = static_cast<int>(pos.y * scale);
@@ -12,9 +21,10 @@ void Body::draw(Color color) const {
     DrawCircle(screenX, screenY, screenRadius, color);
 
     for (auto e : oldPositions){
-        DrawCircle(static_cast<int>(e.x * scale) ,static_cast<int>(e.y * scale) ,2,WHITE);
+        DrawCircle(static_cast<int>(e.x * scale) ,static_cast<int>(e.y * scale) ,2,color);
     }
 }
+
 
 void Body::applyGravity(std::vector<Body> bodies) const 
 {
@@ -40,9 +50,13 @@ void Body::check_touched_ledge(){
 
 void appgravity(Body& b){
 
-    b.speed.y += 0.5;
+    //b.speed.y += 0.5;
 
     b.pos.y += b.speed.y;
+
+    if (b.oldPositions.size() >= b.MAXOLDPOS){
+        b.oldPositions.clear();
+    }
 
     b.oldPositions.push_back(b.pos);
 

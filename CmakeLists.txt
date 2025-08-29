@@ -9,6 +9,8 @@ set(RAYLIB_PATH "C:/Libraries/raylib")
 include_directories(${RAYLIB_PATH}/include)
 link_directories(${RAYLIB_PATH}/lib)
 
-add_executable(GravityZone src/main.cpp src/body.cpp src/constant.cpp)
+add_executable(GravityZone src/main.cpp src/body.cpp src/constant.cpp src/view.cpp src/utils.cpp)
+
+set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
 
 target_link_libraries(GravityZone raylib winmm gdi32 opengl32)

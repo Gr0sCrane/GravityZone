@@ -10,6 +10,12 @@
     <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\constant.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\view.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\utils.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\CmakeLists.txt" />

@@ -335,6 +335,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\main.cpp" />
     <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\body.cpp" />
     <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\constant.cpp" />
+    <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\view.cpp" />
+    <ClCompile Include="C:\Users\mouad\OneDrive\Desktop\GravityZone\src\utils.cpp" />
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
