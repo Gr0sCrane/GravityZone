@@ -10,6 +10,10 @@ void Body::draw(Color color) const {
     int screenY = static_cast<int>(pos.y * scale);
     float screenRadius = radius * scale;
     DrawCircle(screenX, screenY, screenRadius, color);
+
+    for (auto e : oldPositions){
+        DrawCircle(static_cast<int>(e.x * scale) ,static_cast<int>(e.y * scale) ,2,WHITE);
+    }
 }
 
 void Body::applyGravity(std::vector<Body> bodies) const 
@@ -20,13 +24,37 @@ void Body::applyGravity(std::vector<Body> bodies) const
     }
 }
 
-void appgravity(Body& b, int height){
+void Body::check_touched_ledge(){
+    double posY = pos.y + radius; // Position y of the body
+    double posYTop = pos.y - radius;
 
-    int posY_b = b.pos.y + b.radius; // Position y of the body
-
-    if (posY_b >= height/scale) {
-        b.pos.y--;
+    if (posY >= 720/scale){
+        has_touched_low_ledge = true;
+    } else if (posYTop <= 0){
+        has_touched_top_ledge = true;
     } else {
-        b.pos.y++;
+        has_touched_low_ledge = false;
+        has_touched_top_ledge = false;
+    }
+}
+
+void appgravity(Body& b){
+
+    b.speed.y += 0.5;
+
+    b.pos.y += b.speed.y;
+
+    b.oldPositions.push_back(b.pos);
+
+    b.check_touched_ledge();
+
+    if (b.has_touched_low_ledge) {
+        b.pos.y = (720 / scale) - b.radius;
+        b.speed.y *= -0.7;
+    }
+
+    if (b.has_touched_top_ledge) {
+        b.pos.y = b.radius;
+        b.speed.y *= -0.7;
     }
 }

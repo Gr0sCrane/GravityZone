@@ -30,7 +30,7 @@ int main() {
         planet.draw(WHITE);
         planet2.draw(BLUE);
 
-        appgravity(planet,HEIGHT);
+        appgravity(planet);
         
         EndDrawing();
     }
