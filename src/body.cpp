@@ -49,7 +49,7 @@ void Body::check_touched_ledge(){
 
 void appgravity(Body& b,Body& b2){
 
-    b.speed.y += 0.01; // gravity -> a modifier par la constante
+    b.speed.y += 0.02; // gravity -> a modifier par la constante
 
     b.pos.y += b.speed.y;
     b.pos.x += b.speed.x;
@@ -78,9 +78,9 @@ void appgravity(Body& b,Body& b2){
         b.speed.y *= 0.9;
         b.speed.x *= -0.9;
     }
-    if (b.has_touched_left_ledge){
+    if (b.has_touched_left_ledge || collisionCheck(b,b2)){
         b.speed.x *= -0.9;
-        b.speed.y *= 0.9;
+        b.speed.y *= -0.9;
     }
 }
 

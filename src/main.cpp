@@ -22,8 +22,8 @@ int main() {
     Position pos = {20,20};
     Position pos2 = {30,20};
 
-    Body planet = Body(pos,50,1,Velocity(1,1.3));
-    Body planet2 = Body(pos2,50,1,Velocity(1,3));
+    Body planet = Body(pos,50,1,Velocity(1,1.2));
+    Body planet2 = Body(pos2,50,1,Velocity(1,1.3));
 
     View v;
 
