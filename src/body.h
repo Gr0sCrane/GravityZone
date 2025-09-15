@@ -15,7 +15,7 @@ struct Body {
     double mass;
     float radius;
     Velocity speed;
-    double acceleration;
+    double acceleration = 0;
     Position pos;
     bool has_touched_top_ledge = false;
     bool has_touched_low_ledge = false;
