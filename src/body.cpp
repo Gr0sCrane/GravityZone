@@ -5,7 +5,7 @@
 Body::Body(Position pos, double mass, float radius,Velocity2 speed) : 
 pos(pos),mass(mass),radius(radius),speed(speed) {}
 
-bool checkSizeOldPos(std::vector<Position> oldPos,size_t max){
+bool checkSizeOldPos(std::vector<Position> oldPos, size_t max){
 
     if(oldPos.size() >= max){
         oldPos.clear();
