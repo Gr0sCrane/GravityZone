@@ -2,7 +2,7 @@
 #include "body.h"
 
 
-Body::Body(Position pos, double mass, float radius,Velocity speed) : 
+Body::Body(Position pos, double mass, float radius,Velocity2 speed) : 
 pos(pos),mass(mass),radius(radius),speed(speed) {}
 
 bool checkSizeOldPos(std::vector<Position> oldPos,size_t max){
@@ -42,7 +42,7 @@ void Body::check_touched_ledge(){
 
     has_touched_low_ledge = (posY >= 720/scale);
     has_touched_top_ledge = (posYTop <= 0);
-    has_touched_left_ledge = (posXBack <= 0);
+    has_touched_left_ledge = (posXBack <= 0.5);
     has_touched_right_ledge = (posX >= 1280/scale);
 
 }

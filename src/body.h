@@ -5,7 +5,7 @@
 #include "constant.h"
 #include <vector>
 
-struct Velocity {
+struct Velocity2 {
     double x;
     double y;
 };
@@ -14,7 +14,7 @@ struct Body {
 
     double mass;
     float radius;
-    Velocity speed;
+    Velocity2 speed;
     double acceleration = 0;
     Position pos;
     bool has_touched_top_ledge = false;
@@ -24,7 +24,7 @@ struct Body {
     std::vector<Position> oldPositions;
     const size_t MAXOLDPOS = 1000;
 
-    Body(Position pos,double mass,float radius,Velocity speed);
+    Body(Position pos,double mass,float radius,Velocity2 speed);
     ~Body() = default;
 
     void draw(Color color) const;
