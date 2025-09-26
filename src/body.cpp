@@ -35,9 +35,9 @@ void Body::applyGravity(std::vector<Body> bodies) const
 }
 
 void Body::check_touched_ledge(){
-    double posY = pos.y + radius; // Position y of the body
+    double posY = pos.y + radius + 0.10; // Position y of the body
     double posX = pos.x + radius;
-    double posXBack = pos.x - radius - 0.15;
+    double posXBack = pos.x - radius - 0.17;
     double posYTop = pos.y - radius;
 
     has_touched_low_ledge = (posY >= 720/scale);
